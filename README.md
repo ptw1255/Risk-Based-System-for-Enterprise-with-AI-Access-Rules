@@ -50,7 +50,7 @@ The system should help Randall process requests faster without hiding risk. Rand
 4. AI assists Randall by summarizing evidence, highlighting risk factors, identifying policy matches, and recommending an action.
 5. Randall decides to approve, deny, escalate, or grant time-bound access.
 6. Randall adds or confirms audit notes, including an override reason if he disagrees with the AI recommendation.
-7. The system saves an audit record with the request, evidence, AI recommendation, Randall decision, notes, and timestamps.
+7. The system saves an audit record with the request, evidence, AI recommendation, reviewer decision, notes, and timestamps.
 
 ## Data Inputs
 

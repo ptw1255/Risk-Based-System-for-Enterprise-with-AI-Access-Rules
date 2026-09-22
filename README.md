@@ -133,3 +133,7 @@ The lightweight prototype should let Randall triage access requests by showing:
 This repository includes a static reviewer-console prototype for Randall.
 
 Open `index.html` in a browser to review mock healthcare access requests, inspect AI-assisted evidence, choose a decision, and capture audit notes.
+
+## System Design
+
+See `docs/system-architecture.md` for the proposed system architecture, core components, data model, request lifecycle, trust controls, MVP scope, and future extensions.

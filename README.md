@@ -16,27 +16,41 @@ Healthcare companies and fintech enterprises that need controlled, auditable acc
 
 Increase the velocity of sensitive-data access approvals while maintaining responsible policy enforcement, security oversight, and audit readiness.
 
-## Primary Users
+## Primary Persona
 
-- Employees who are onboarding and need baseline access to data, systems, or applications.
-- Existing employees who need new, expanded, or temporary access for a project, role change, investigation, client work, or operational need.
-- Human reviewers, such as security reviewers or access governance analysts, who approve, deny, escalate, or time-bound access requests.
+Reviewer Randall is a security or access governance reviewer at a healthcare company. His job is to evaluate sensitive-data access requests quickly and responsibly, especially requests involving PHI such as blood work reports.
+
+For the MVP, the product focuses on Randall. The employee requester, such as Customer Support Carl, is treated as request context rather than a separate user experience.
+
+## Jobs To Be Done
+
+### Primary Reviewer Job
+
+When Randall receives a sensitive-data access request, he wants to quickly understand who is asking, what they need, why they need it, which policies apply, and what risk signals exist so that he can make a fast, responsible, and auditable access decision.
+
+### AI-Assisted Review Job
+
+When Randall reviews a request, he wants AI to summarize the evidence, highlight risk factors, map the request to policy, and recommend an action with rationale so that he can process the request faster while still trusting and owning the final decision.
+
+### Audit And Trust Job
+
+When Randall or the organization reviews a decision later, they want a complete record of the request, evidence, AI recommendation, human decision, and rationale so that the organization can prove the decision was appropriate, explainable, and policy-aligned.
 
 ## Product Concept
 
-A risk-based access management system that evaluates sensitive data access requests using identity context, request details, resource sensitivity, policy constraints, security telemetry, historical records, and AI-assisted reasoning.
+A reviewer console for evaluating sensitive-data access requests using identity context, request details, resource sensitivity, policy constraints, security telemetry, historical records, and AI-assisted reasoning.
 
-The system should help reviewers process requests faster without hiding risk. Reviewers should be able to understand the recommendation, inspect the evidence, apply policy judgment, and make an auditable final decision.
+The system should help Randall process requests faster without hiding risk. Randall should be able to understand the recommendation, inspect the evidence, apply policy judgment, and make an auditable final decision.
 
-## UX Flow
+## Reviewer UX Flow
 
-1. Employee requests access by selecting the resource, access level, duration, and business justification.
-2. System enriches the request with user context, manager, team, resource sensitivity, policies, prior access history, and security signals.
-3. Risk and policy evaluation runs to identify sensitive data exposure, policy matches, anomalies, and required approval paths.
-4. AI assists the reviewer by summarizing evidence, highlighting risk factors, and recommending an action.
-5. Human reviewer triages the request and decides to approve, deny, escalate, or grant time-bound access.
-6. Employee is notified of the decision, next steps, and expiration terms if access is approved.
-7. Audit record is saved with the request, evidence, AI recommendation, reviewer decision, notes, and timestamps.
+1. Randall views a queue of pending sensitive-data access requests.
+2. Randall opens a request, such as Carl requesting access to a patient blood work report for a support case.
+3. The system shows enriched request context, including requester role, business justification, resource sensitivity, relevant policies, prior history, and security signals.
+4. AI assists Randall by summarizing evidence, highlighting risk factors, identifying policy matches, and recommending an action.
+5. Randall decides to approve, deny, escalate, or grant time-bound access.
+6. Randall adds or confirms audit notes, including an override reason if he disagrees with the AI recommendation.
+7. The system saves an audit record with the request, evidence, AI recommendation, Randalls decision, notes, and timestamps.
 
 ## Data Inputs
 
@@ -51,7 +65,7 @@ The system should help reviewers process requests faster without hiding risk. Re
 
 ## Reviewer Console Prototype
 
-The lightweight prototype should let a security reviewer triage access requests by showing:
+The lightweight prototype should let Randall triage access requests by showing:
 
 - Request queue
 - Risk score

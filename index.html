@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access Review Console</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Healthcare access governance</p>
+          <h1>Reviewer Console</h1>
+        </div>
+        <section class="reviewer" aria-label="Active reviewer">
+          <span class="reviewer-avatar">RR</span>
+          <div>
+            <strong>Reviewer Randall</strong>
+            <span>Access Governance</span>
+          </div>
+        </section>
+      </header>
+
+      <section class="metrics" aria-label="Review queue metrics">
+        <div>
+          <span>Pending</span>
+          <strong id="pendingCount">0</strong>
+        </div>
+        <div>
+          <span>High risk</span>
+          <strong id="highRiskCount">0</strong>
+        </div>
+        <div>
+          <span>Median age</span>
+          <strong>18m</strong>
+        </div>
+        <div>
+          <span>Audit ready</span>
+          <strong>100%</strong>
+        </div>
+      </section>
+
+      <div class="workspace">
+        <aside class="queue" aria-label="Pending requests">
+          <div class="queue-head">
+            <h2>Request Queue</h2>
+            <select id="filter">
+              <option value="all">All requests</option>
+              <option value="high">High risk</option>
+              <option value="escalate">Escalate</option>
+              <option value="approve">Approve</option>
+            </select>
+          </div>
+          <div id="requestList" class="request-list"></div>
+        </aside>
+
+        <section class="detail" aria-live="polite">
+          <div class="detail-head">
+            <div>
+              <p class="eyebrow" id="caseId"></p>
+              <h2 id="requestTitle"></h2>
+            </div>
+            <span id="riskBadge" class="risk-badge"></span>
+          </div>
+
+          <div class="detail-grid">
+            <section class="panel">
+              <h3>Request Summary</h3>
+              <dl class="summary-list" id="summaryList"></dl>
+            </section>
+
+            <section class="panel">
+              <h3>AI Recommendation</h3>
+              <div id="recommendation" class="recommendation"></div>
+            </section>
+
+            <section class="panel span-2">
+              <h3>Evidence And Policy Logic</h3>
+              <div id="evidenceList" class="evidence-list"></div>
+            </section>
+
+            <section class="panel">
+              <h3>Current Permission Level</h3>
+              <ul id="permissionList" class="plain-list"></ul>
+            </section>
+
+            <section class="panel">
+              <h3>Security Signals</h3>
+              <ul id="signalList" class="plain-list"></ul>
+            </section>
+          </div>
+        </section>
+
+        <aside class="decision" aria-label="Decision panel">
+          <h2>Decision</h2>
+          <div class="decision-actions" id="decisionActions">
+            <button data-action="Approve">Approve</button>
+            <button data-action="Approve with expiration">Time-bound</button>
+            <button data-action="Escalate">Escalate</button>
+            <button data-action="Deny">Deny</button>
+          </div>
+
+          <label for="expiration">Access expiration</label>
+          <select id="expiration">
+            <option>4 hours</option>
+            <option selected>24 hours</option>
+            <option>3 days</option>
+            <option>7 days</option>
+          </select>
+
+          <label for="auditNote">Audit notes</label>
+          <textarea id="auditNote" rows="8"></textarea>
+
+          <button id="saveDecision" class="primary">Save Decision</button>
+          <p id="decisionStatus" class="decision-status"></p>
+        </aside>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -127,3 +127,9 @@ The lightweight prototype should let Randall triage access requests by showing:
 - Recommended action
 - Reviewer decision
 - Audit notes
+
+## Vibe Coding Prototype
+
+This repository includes a static reviewer-console prototype for Randall.
+
+Open `index.html` in a browser to review mock healthcare access requests, inspect AI-assisted evidence, choose a decision, and capture audit notes.

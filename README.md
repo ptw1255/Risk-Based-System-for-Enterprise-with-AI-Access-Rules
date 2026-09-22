@@ -26,7 +26,7 @@ For the MVP, the product focuses on Randall. The employee requester, such as Cus
 
 ### Primary Reviewer Job
 
-When Randall receives a sensitive-data access request, he wants to quickly understand who is asking, what they need, why they need it, which policies apply, and what risk signals exist so that he can make a fast, responsible, and auditable access decision.
+When Randall receives a sensitive-data access request, he wants to review the request in the right manner, respond quickly, and capture the evidence and logic behind his decision so the system has a complete record.
 
 ### AI-Assisted Review Job
 
@@ -51,6 +51,59 @@ The system should help Randall process requests faster without hiding risk. Rand
 5. Randall decides to approve, deny, escalate, or grant time-bound access.
 6. Randall adds or confirms audit notes, including an override reason if he disagrees with the AI recommendation.
 7. The system saves an audit record with the request, evidence, AI recommendation, reviewer decision, notes, and timestamps.
+
+
+## Functional Requirements
+
+### R1: Identify The Requester
+
+The system must identify who is making the access request so Randall can understand the requester context before making a decision.
+
+The system should show:
+
+- Requester name and role
+- Department or team
+- Manager or reporting line
+- Employment status
+- Relevant compliance or training status
+
+### R2: Identify Current Permission Level
+
+The system must show what level of permission the requester currently has so Randall can compare the new request against existing access.
+
+The system should show:
+
+- Current access level
+- Existing permissions for the requested system or dataset
+- Prior related access grants
+- Any recent permission changes
+
+### R3: Identify Requested Data Access
+
+The system must show what data the requester needs access to so Randall can evaluate sensitivity and scope.
+
+The system should show:
+
+- Requested resource or report
+- Data classification
+- Sensitive data type, such as PHI or PII
+- Requested access level
+- Requested access duration
+- Business justification
+
+### R4: Evaluate Request Against Policy
+
+The system must provide a response based on the relationship between the request and applicable policies.
+
+The system should show:
+
+- Relevant policy matches
+- Policy conflicts or violations
+- Risk score
+- Supporting evidence
+- AI-recommended action
+- Rationale for the recommendation
+- Missing or uncertain information
 
 ## Data Inputs
 
